@@ -1,0 +1,23 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+        "manifest_version": 2,
+        "name": "Do I Really Need This?",
+        "version": "0.3.1",
+        "description": "Adds a popup window action to checkout buttons to pose the question 'Do I Really Need This?'",
+		"permissions":
+		[
+			"storage"
+		],
+		"icons": { 	"16": 	"icon16.png",
+					"48": 	"icon48.png",
+					"128": 	"icon128.png" },
+        "content_scripts": 
+        [
+                {
+                        "matches": ["*://*/*"],
+                        "js": ["content_script.js", "dirnt.js"],
+                        "run_at": "document_end"
+                }
+        ]
+}
